@@ -2,26 +2,23 @@ import React from 'react'
 import '../styles/App.css';
 const App = () => {
 
-  const handleInput = (event) =>{
+  const handleInput = (e) =>{
    // use console.log
-    if(event.target.type=='text')
-     console.log(event.target.value);
+   console.log("Input in #"+e.target.id+" is "+e.target.value);
 
-     if(event.target.type=='number')
-     console.log(event.target.value);
   }
 
   // do not change id of input elements
   return (
     <div id="main">
       <label htmlFor='text-input'>Text Input:- </label>
-      <input id="text-input" type={'text'} onInput={(e)=> handleInput(e) } />
+      <input id="text-input" type={'text'} onChange={handleInput} />
 
       <br/>
       <br/>
 
       <label htmlFor='num-input'>Number input</label>
-      <input id="num-input"  type={'number'}  onInput={(e)=> handleInput(e) }/>
+      <input id="num-input"  type={'number'} onChange={handleInput}/>
       <br/>
     </div>
   )
